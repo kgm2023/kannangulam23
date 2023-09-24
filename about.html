@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>our village websites </title>
+       <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css?
+family=poppins:,wght@100;200;300;400;0,700;700&display=swap"
+      rel="stylesheet">
+<link rel="stylesheet" href= "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="pictures/Kgm%201.png"></a>
+            <div class="nav-links" id="navLinks">
+               <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+             <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">GALLERY</a></li>
+                <li><a href="blog.html">TEMPLE</a></li>
+                <li><a href="course.html">VILLAGE DETAILS</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+				<li><a href="my.html">MY PORTFOLIO</a></li>
+                </ul>
+            </div>
+              <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+		<h1>GALLERY</h1>
+	</section>
+	<!-------about us content-------->
+	<section class="about-us">
+	  
+		<div class="row">
+				 <h>KGM BOYS</h> 
+				
+		</div>  
+			 <div class="about-col2">
+	        
+				<div class="about-col2" data-index="1"><img src="pictures/boys2.jpg"><br></div>
+				 <div class="about-col2" data-index="2"><img src="pictures/boys3.jpg"><br></div>
+				 <div class="about-col2" data-index="3"><img src="pictures/boys4.jpg"><br></div>
+				 <div class="about-col2" data-index="4"><img src="pictures/boys5.jpg"><br></div>
+				<div class="about-col2" data-index="5"><img src="pictures/boys6.jpg"><br></div>
+				 <div class="about-col2" data-index="6"><img src="pictures/boys7.JPG"><br></div>
+				 <div class="about-col2" data-index="7"><img src="pictures/boys8.jpg"><br></div>					
+				<div class="about-col2" data-index="1"><img src="pictures/boys9.jpg"><br></div>
+				 <div class="about-col2" data-index="2"><img src="pictures/boys10.jpg"><br></div>
+				 <div class="about-col2" data-index="3"><img src="pictures/boys12.jpg"><br></div>
+				 <div class="about-col2" data-index="4"><img src="pictures/boys5.jpg"><br></div>
+				<div class="about-col2" data-index="5"><img src="pictures/boys6.jpg"><br></div>
+				 <div class="about-col2" data-index="6"><img src="pictures/boys7.JPG"><br></div>
+				 <div class="about-col2" data-index="7"><img src="pictures/boys8.jpg"><br></div>					
+			
+			</div>
+	
+	
+	</section>
+    
+	 <!--javascript--->
+<script>
+	const aboutcol2 = document.getElementsByClassName("about-col2");
+	// create element
+	const lightbBoxcontainer = document.createElement("div");
+	// for basic area
+	const lightBoxcontent = document.createElement("div");
+	// images
+	const lightBoxImg = document.createElement("img");
+	// prev button to change IMAGES
+	const lightBoxPrev = document.createElement("div");
+	// for next button
+	const lightBoxNext = document.createElement("div");
+
+	// create class list
+	
+	lightBoxcontainer.classList.add('lightbox');
+	lightBoxcontent.classList.add('lightbox-content');
+	lightBoxPrev.classList.add("fa","fa-angle-left","lightbox-prev");
+	lightBoxNext.classList.add("fa","fa-angle-right","lightbox-next");
+	
+	lightBoxcontainer.appendChild(lightBoxcontainer);
+	lightBoxcontent.appendChild(lightBoxImg);
+	lightBoxcontent.appendChild(lightBoxPrev);
+	lightBoxcontent.appendChild(lightBoxNext);
+	document.body.appendChild(lightBoxcontainer);
+
+	
+	
+	let imdex = 1;
+	
+	// create function
+	
+	
+	function showLightBox(n){
+         if (n > aboutcol2.length){
+			 index = 1;
+		 else if(n < 1){
+			 index = aboutcol2.length;
+		 }	 
+			 
+		 }
+	     let imagelocation = aboutcol2[index-1].children[0].getAttribute("src")
+		 lightBoxImg.setAttribute("src", imagelocation);
+	
+	}
+	function currentImage(){
+		lightBoxcontainer.style.display="block";
+		
+		
+		let imageIndex = parseInt(this.getAttribute("data-index"));
+		showLightBox(index = imageIndex);
+		
+		
+	}
+	
+	for(let i = 0; i<aboutcol2.length; i++){
+		aboutcol2[1].addEventListener("click", currentImage);
+	}
+	function sliderImage(n){
+		showLightBox(index += n);
+		
+	}
+	 function preImage(){
+		 sliderImage(-1);
+	 }
+	function nextImage(){
+        sliderImage(1);
+	
+	}
+	
+	lightBoxcontainer.addEventListener("click",preImage);
+	lightBoxNext.addEventListener("click", nextImage);
+	
+// close light
+	function closeLightBox(){
+		if(this *** Event.target){
+			lightBoxcontainer.style.display = "none";
+			
+		}
+	}
+	
+	lightBoxcontainer.addEventListener("click", closeLightBox);
+	
+	
+	
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	<!------- footer ------>
+	<section class="footer">
+      <h4>நண்பர்கள்........</h4>	
+		<p>இளமை காலம் இனிமையா கடந்து செல்ல நட்பு வட்டம்நம்மைச் சுற்றி இருந்தால் போதும். <br>நம்மில் இருக்கும் நல்லதை மட்டும் பார்ப்பவன் நண்பன்;நம்மிடம் இருக்கும் தீயவற்றை நம்மிடம் மட்டும் சொல்பவன் உண்மையான நண்பன் <br></p>
+               <p>''ஆய்ந்தோய்ந்து கொள்ளாதான் கேண்மை கடைமுறை தான் சாந் துயரம் தரும் " </p>
+	
+	</section>
+	
+ <!--------JavaScript for Toggle Menu------->
+ <script>
+        
+      var navLinks= document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right ="45%";
+        }
+        function hideMenu(){
+            navLinks.style.right ="100%";
+        }
+    
+    </script>
+
+</body>
+ </html>
